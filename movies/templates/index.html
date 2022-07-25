@@ -102,21 +102,22 @@
 
           <ul class="movies-list  has-scrollbar">
 
-            <li>
+            {% for movie in movies %}
+              <li>
               <div class="movie-card">
 
-                <a href="{% url 'detail' %}">
+                <a href="{% url 'detail' movie.id %}">
                   <figure class="card-banner">
-                    <img src="./assets/images/upcoming-1.png" alt="The Northman movie poster">
+                    <img src="{{ movie.movies_image.url }}" alt="The Northman movie poster">
                   </figure>
                 </a>
 
                 <div class="title-wrapper">
-                  <a href="{% url 'detail' %}">
-                    <h3 class="card-title">The Northman</h3>
+                  <a href="{% url 'detail' movie.id %}">
+                    <h3 class="card-title">{{ movie.title }}</h3>
                   </a>
 
-                  <time datetime="2022">2022</time>
+                  <time datetime="2022">{{ movie.released_date }}</time>
                 </div>
 
                 <div class="card-meta">
@@ -125,7 +126,7 @@
                   <div class="duration">
                     <ion-icon name="time-outline"></ion-icon>
 
-                    <time datetime="PT137M">137 min</time>
+                    <time datetime="PT137M">{{ movie.length_time }}</time>
                   </div>
 
                   <div class="rating">
@@ -137,116 +138,11 @@
 
               </div>
             </li>
+            {% endfor %}
+              
+              
 
-            <li>
-              <div class="movie-card">
-
-                <a href="{% url 'detail' %}">
-                  <figure class="card-banner">
-                    <img src="./assets/images/upcoming-2.png"
-                      alt="Doctor Strange in the Multiverse of Madness movie poster">
-                  </figure>
-                </a>
-
-                <div class="title-wrapper">
-                  <a href="{% url 'detail' %}">
-                    <h3 class="card-title">Doctor Strange in the Multiverse of Madness</h3>
-                  </a>
-
-                  <time datetime="2022">2022</time>
-                </div>
-
-                <div class="card-meta">
-                  <div class="badge badge-outline">4K</div>
-
-                  <div class="duration">
-                    <ion-icon name="time-outline"></ion-icon>
-
-                    <time datetime="PT126M">126 min</time>
-                  </div>
-
-                  <div class="rating">
-                    <ion-icon name="star"></ion-icon>
-
-                    <data>NR</data>
-                  </div>
-                </div>
-
-              </div>
-            </li>
-
-            <li>
-              <div class="movie-card">
-
-                <a href="{% url 'detail' %}">
-                  <figure class="card-banner">
-                    <img src="./assets/images/upcoming-3.png" alt="Memory movie poster">
-                  </figure>
-                </a>
-
-                <div class="title-wrapper">
-                  <a href="{% url 'detail' %}">
-                    <h3 class="card-title">Memory</h3>
-                  </a>
-
-                  <time datetime="2022">2022</time>
-                </div>
-
-                <div class="card-meta">
-                  <div class="badge badge-outline">2K</div>
-
-                  <div class="duration">
-                    <ion-icon name="time-outline"></ion-icon>
-
-                    <time datetime="">N/A</time>
-                  </div>
-
-                  <div class="rating">
-                    <ion-icon name="star"></ion-icon>
-
-                    <data>NR</data>
-                  </div>
-                </div>
-
-              </div>
-            </li>
-
-            <li>
-              <div class="movie-card">
-
-                <a href="{% url 'detail' %}">
-                  <figure class="card-banner">
-                    <img src="./assets/images/upcoming-4.png"
-                      alt="The Unbearable Weight of Massive Talent movie poster">
-                  </figure>
-                </a>
-
-                <div class="title-wrapper">
-                  <a href="{% url 'detail' %}">
-                    <h3 class="card-title">The Unbearable Weight of Massive Talent</h3>
-                  </a>
-
-                  <time datetime="2022">2022</time>
-                </div>
-
-                <div class="card-meta">
-                  <div class="badge badge-outline">HD</div>
-
-                  <div class="duration">
-                    <ion-icon name="time-outline"></ion-icon>
-
-                    <time datetime="PT107M">107 min</time>
-                  </div>
-
-                  <div class="rating">
-                    <ion-icon name="star"></ion-icon>
-
-                    <data>NR</data>
-                  </div>
-                </div>
-
-              </div>
-            </li>
+            
 
           </ul>
 
@@ -373,14 +269,14 @@
             <li>
               <div class="movie-card">
 
-                <a href="{% url 'detail' %}">
+                <a href="#">
                   <figure class="card-banner">
                     <img src="./assets/images/movie-1.png" alt="Sonic the Hedgehog 2 movie poster">
                   </figure>
                 </a>
 
                 <div class="title-wrapper">
-                  <a href="{% url 'detail' %}">
+                  <a href="#">
                     <h3 class="card-title">Sonic the Hedgehog 2</h3>
                   </a>
 
@@ -409,14 +305,14 @@
             <li>
               <div class="movie-card">
 
-                <a href="{% url 'detail' %}">
+                <a href="#">
                   <figure class="card-banner">
                     <img src="./assets/images/movie-2.png" alt="Morbius movie poster">
                   </figure>
                 </a>
 
                 <div class="title-wrapper">
-                  <a href="{% url 'detail' %}">
+                  <a href="#">
                     <h3 class="card-title">Morbius</h3>
                   </a>
 
@@ -445,14 +341,14 @@
             <li>
               <div class="movie-card">
 
-                <a href="{% url 'detail' %}">
+                <a href="#">
                   <figure class="card-banner">
                     <img src="./assets/images/movie-3.png" alt="The Adam Project movie poster">
                   </figure>
                 </a>
 
                 <div class="title-wrapper">
-                  <a href="{% url 'detail' %}">
+                  <a href="#">
                     <h3 class="card-title">The Adam Project</h3>
                   </a>
 
@@ -481,14 +377,14 @@
             <li>
               <div class="movie-card">
 
-                <a href="{% url 'detail' %}">
+                <a href="#">
                   <figure class="card-banner">
                     <img src="./assets/images/movie-4.png" alt="Free Guy movie poster">
                   </figure>
                 </a>
 
                 <div class="title-wrapper">
-                  <a href="{% url 'detail' %}">
+                  <a href="#">
                     <h3 class="card-title">Free Guy</h3>
                   </a>
 
@@ -517,14 +413,14 @@
             <li>
               <div class="movie-card">
 
-                <a href="{% url 'detail' %}">
+                <a href="#">
                   <figure class="card-banner">
                     <img src="./assets/images/movie-5.png" alt="The Batman movie poster">
                   </figure>
                 </a>
 
                 <div class="title-wrapper">
-                  <a href="{% url 'detail' %}">
+                  <a href="#">
                     <h3 class="card-title">The Batman</h3>
                   </a>
 
@@ -553,14 +449,14 @@
             <li>
               <div class="movie-card">
 
-                <a href="{% url 'detail' %}">
+                <a href="#">
                   <figure class="card-banner">
                     <img src="./assets/images/movie-6.png" alt="Uncharted movie poster">
                   </figure>
                 </a>
 
                 <div class="title-wrapper">
-                  <a href="{% url 'detail' %}">
+                  <a href="#">
                     <h3 class="card-title">Uncharted</h3>
                   </a>
 
@@ -589,14 +485,14 @@
             <li>
               <div class="movie-card">
 
-                <a href="{% url 'detail' %}">
+                <a href="#">
                   <figure class="card-banner">
                     <img src="./assets/images/movie-7.png" alt="Death on the Nile movie poster">
                   </figure>
                 </a>
 
                 <div class="title-wrapper">
-                  <a href="{% url 'detail' %}">
+                  <a href="#">
                     <h3 class="card-title">Death on the Nile</h3>
                   </a>
 
@@ -625,14 +521,14 @@
             <li>
               <div class="movie-card">
 
-                <a href="{% url 'detail' %}">
+                <a href="#">
                   <figure class="card-banner">
                     <img src="./assets/images/movie-8.png" alt="The King's Man movie poster">
                   </figure>
                 </a>
 
                 <div class="title-wrapper">
-                  <a href="{% url 'detail' %}">
+                  <a href="#">
                     <h3 class="card-title">The King's Man</h3>
                   </a>
 
@@ -683,14 +579,14 @@
             <li>
               <div class="movie-card">
 
-                <a href="{% url 'detail' %}">
+                <a href="#">
                   <figure class="card-banner">
                     <img src="./assets/images/series-1.png" alt="Moon Knight movie poster">
                   </figure>
                 </a>
 
                 <div class="title-wrapper">
-                  <a href="{% url 'detail' %}">
+                  <a href="#">
                     <h3 class="card-title">Moon Knight</h3>
                   </a>
 
@@ -719,14 +615,14 @@
             <li>
               <div class="movie-card">
 
-                <a href="{% url 'detail' %}">
+                <a href="#">
                   <figure class="card-banner">
                     <img src="./assets/images/series-2.png" alt="Halo movie poster">
                   </figure>
                 </a>
 
                 <div class="title-wrapper">
-                  <a href="{% url 'detail' %}">
+                  <a href="#">
                     <h3 class="card-title">Halo</h3>
                   </a>
 
@@ -755,14 +651,14 @@
             <li>
               <div class="movie-card">
 
-                <a href="{% url 'detail' %}">
+                <a href="#">
                   <figure class="card-banner">
                     <img src="./assets/images/series-3.png" alt="Vikings: Valhalla movie poster">
                   </figure>
                 </a>
 
                 <div class="title-wrapper">
-                  <a href="{% url 'detail' %}">
+                  <a href="#">
                     <h3 class="card-title">Vikings: Valhalla</h3>
                   </a>
 
@@ -791,14 +687,14 @@
             <li>
               <div class="movie-card">
 
-                <a href="{% url 'detail' %}">
+                <a href="#">
                   <figure class="card-banner">
                     <img src="./assets/images/series-4.png" alt="Money Heist movie poster">
                   </figure>
                 </a>
 
                 <div class="title-wrapper">
-                  <a href="{% url 'detail' %}">
+                  <a href="#">
                     <h3 class="card-title">Money Heist</h3>
                   </a>
 
